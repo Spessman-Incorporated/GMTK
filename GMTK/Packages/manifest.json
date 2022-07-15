@@ -2,6 +2,8 @@
   "dependencies": {
     "com.coimbrastudios.core": "10.8.5",
     "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
+    "com.unity.2d.pixel-perfect": "2.1.0",
+    "com.unity.2d.sprite": "1.0.0",
     "com.unity.2d.tilemap": "1.0.0",
     "com.unity.cinemachine": "2.8.6",
     "com.unity.collab-proxy": "1.15.15",
