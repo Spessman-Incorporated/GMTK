@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerAttackCollisionDetector : MonoBehaviour
 {
     public Transform dice;
+    public GameObject diceObject;
 
     private void Update()
     {
@@ -22,13 +23,13 @@ public class PlayerAttackCollisionDetector : MonoBehaviour
             {
                 return;
             }
-
+            
             if (Vector3.Dot(Vector3.forward, transform.InverseTransformPoint(dice.transform.position)) > 0)
             {
                 Debug.Log("dice in front of player :)");
-
+            
                 //raycast forward to get wall?
-
+            
                 physicalDice.MoveUntilHitWall(transform.forward);               
             }            
         }
@@ -37,22 +38,20 @@ public class PlayerAttackCollisionDetector : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         DiceCollisionDetector diceCollisionDetector = other.GetComponent<DiceCollisionDetector>();
-
+    
         if (diceCollisionDetector != null)
         {
             dice = diceCollisionDetector.transform.root;
-            Debug.Log("dice");
         }
     }
-
+    
     private void OnTriggerExit(Collider other)
     {
         DiceCollisionDetector diceCollisionDetector = other.GetComponent<DiceCollisionDetector>();
-
+    
         if (diceCollisionDetector != null)
         {
             dice = null;
-            Debug.Log("no dice :(");
         }
     }
 }

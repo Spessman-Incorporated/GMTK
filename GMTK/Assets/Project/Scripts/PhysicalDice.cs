@@ -9,7 +9,7 @@ using Random = UnityEngine.Random;
 
 public class PhysicalDice : MonoBehaviour
 {
-    public static Action OnDiceRollFinish;
+    public Action OnDiceRollFinish;
     
     public float DiceMovementDuration;
     public Transform ObjectToRotate;
@@ -81,7 +81,15 @@ public class PhysicalDice : MonoBehaviour
         }
 
         CanBeHit = true;
-        Debug.Log("Parei de girar com o valor: " + DiceResultSystem.DiceResult);
+        HitSomething = true;
+        
+        await WaitForSeconds(0.1f);
+        
         OnDiceRollFinish?.Invoke();
+    }
+    
+    private async UniTask WaitForSeconds(float seconds)
+    {
+        await UniTask.Delay(TimeSpan.FromSeconds(seconds));
     }
 }

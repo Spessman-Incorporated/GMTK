@@ -7,7 +7,6 @@ using UnityEngine;
 public class DiceResultSystem : MonoBehaviour
 {
     public static int DiceResult;
-    public int Diceresult2;
     
     private void Start()
     {
@@ -16,8 +15,6 @@ public class DiceResultSystem : MonoBehaviour
 
     private void HandleDiceResult(ref EventContext context, in DiceResultEvent e)
     {
-        //Debug.Log($"New result: {e.Result}");
         DiceResult = e.Result;
-        Diceresult2 = e.Result;
     }
 }
