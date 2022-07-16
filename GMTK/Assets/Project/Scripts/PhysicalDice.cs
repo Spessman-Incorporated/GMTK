@@ -9,7 +9,10 @@ using Random = UnityEngine.Random;
 
 public class PhysicalDice : MonoBehaviour
 {
+    public Action OnDiceRollFinish;
+    
     public float DiceMovementDuration;
+    public Transform ObjectToRotate;
 
     public int sideX;
     public int sideY;
@@ -32,14 +35,9 @@ public class PhysicalDice : MonoBehaviour
 
     private void HandleDiceTriggered(ref EventContext context, in DiceTriggeredEvent e)
     {
-        Debug.Log("dice triggered");
-
         if (e.Hit.layer == LayerMask.NameToLayer("Walls"))
         {
             HitSomething = true;
-
-            _cancellationToken.Cancel();
-            _cancellationToken = new CancellationTokenSource();
         }
     }
 
@@ -63,11 +61,11 @@ public class PhysicalDice : MonoBehaviour
         sideY = Sides[Random.Range(0, 4)];
         sideZ = Sides[Random.Range(0, 4)];
 
-        transform.rotation = Quaternion.Euler(sideX, sideY, sideZ);
+        ObjectToRotate.rotation = Quaternion.Euler(sideX, sideY, sideZ);
 
         float strength = Random.Range(1000f, 10000f);
 
-        transform.DOShakeRotation(duration, strength, 150, 40f).SetEase(Ease.Linear);
+        ObjectToRotate.DOShakeRotation(duration, strength, 150, 40f).SetEase(Ease.Linear);
     }
 
     public async void MoveUntilHitWall(Vector3 direction)
@@ -82,6 +80,16 @@ public class PhysicalDice : MonoBehaviour
             await UniTask.Delay(duration, cancellationToken: _cancellationToken.Token);
         }
 
-        CanBeHit = false;
+        CanBeHit = true;
+        HitSomething = true;
+        
+        await WaitForSeconds(0.1f);
+        
+        OnDiceRollFinish?.Invoke();
+    }
+    
+    private async UniTask WaitForSeconds(float seconds)
+    {
+        await UniTask.Delay(TimeSpan.FromSeconds(seconds));
     }
 }
