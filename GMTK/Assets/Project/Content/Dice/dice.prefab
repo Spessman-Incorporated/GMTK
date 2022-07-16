@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e050da2991265484da049f7efc7ce053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Side: 2
+  Side: 5
 --- !u!136 &3391944435876989480
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -163,8 +163,8 @@ GameObject:
   - component: {fileID: 2925125354785825859}
   - component: {fileID: 2249540963035802598}
   - component: {fileID: 4094632840159862572}
-  - component: {fileID: 3391944435659635465}
   - component: {fileID: 919132148475147482}
+  - component: {fileID: 1116113248}
   m_Layer: 0
   m_Name: dice
   m_TagString: Untagged
@@ -181,7 +181,7 @@ Transform:
   m_GameObject: {fileID: 2581673847091576569}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5378698380272919144}
   - {fileID: 499538814741618282}
@@ -242,32 +242,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3391944435659635465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2581673847091576569}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 469d4234a1772fc488eaef0ba12f966e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DiceMovementDuration: 0.3
-  sideX: 90
-  sideY: 270
-  sideZ: 270
-  Sides: 000000005a000000b40000000e010000
-  ResultHelpers:
-  - {fileID: 7055676247451172532}
-  - {fileID: 1601005586319400369}
-  - {fileID: 550575588003645212}
-  - {fileID: 2769601807719996029}
-  - {fileID: 6653375398344876089}
-  - {fileID: 1543310487958938370}
-  HitSomething: 0
-  CanBeHit: 1
 --- !u!54 &919132148475147482
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -284,6 +258,47 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1116113248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2581673847091576569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 046f0d919651bae41a3f9484f9471073, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TilesToExplode: 0
+  DownExplosions:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  TopExplosions:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  LeftExplosions:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  RightExplosions:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &4049984599280479789
 GameObject:
   m_ObjectHideFlags: 0
