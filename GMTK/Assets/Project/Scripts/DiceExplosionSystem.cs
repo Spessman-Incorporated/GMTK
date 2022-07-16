@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class DiceExplosionSystem : MonoBehaviour
 {
-    public int TilesToExplode;
+    public PhysicalDice PhysicalDice;
+    public DiceResultDetector DiceResult;
     public List<GameObject> DownExplosions;
     public List<GameObject> TopExplosions;
     public List<GameObject> LeftExplosions;
@@ -36,24 +37,22 @@ public class DiceExplosionSystem : MonoBehaviour
 
     public void ExplodeTiles()
     {
-        TilesToExplode = DiceResultSystem.DiceResult;
-        
-        for (int i = 0; i < TilesToExplode; i++)
+        for (int i = 0; i < DiceResult.Side; i++)
         {
             DownExplosions[i].GetComponent<Explode>().ExplodeTile();
         }
         
-        for (int i = 0; i < TilesToExplode; i++)
+        for (int i = 0; i < DiceResult.Side; i++)
         {
             TopExplosions[i].GetComponent<Explode>().ExplodeTile();
         }
         
-        for (int i = 0; i < TilesToExplode; i++)
+        for (int i = 0; i < DiceResult.Side; i++)
         {
             LeftExplosions[i].GetComponent<Explode>().ExplodeTile();
         }
         
-        for (int i = 0; i < TilesToExplode; i++)
+        for (int i = 0; i < DiceResult.Side; i++)
         {
             RightExplosions[i].GetComponent<Explode>().ExplodeTile();
         }
@@ -61,22 +60,22 @@ public class DiceExplosionSystem : MonoBehaviour
 
     public void ResetTiles()
     {
-        for (int i = 0; i < TilesToExplode; i++)
+        for (int i = 0; i < DiceResult.Side; i++)
         {
             DownExplosions[i].GetComponent<Explode>().ResetTile();
         }
         
-        for (int i = 0; i < TilesToExplode; i++)
+        for (int i = 0; i < DiceResult.Side; i++)
         {
             TopExplosions[i].GetComponent<Explode>().ResetTile();
         }
         
-        for (int i = 0; i < TilesToExplode; i++)
+        for (int i = 0; i < DiceResult.Side; i++)
         {
             LeftExplosions[i].GetComponent<Explode>().ResetTile();
         }
         
-        for (int i = 0; i < TilesToExplode; i++)
+        for (int i = 0; i < DiceResult.Side; i++)
         {
             RightExplosions[i].GetComponent<Explode>().ResetTile();
         }

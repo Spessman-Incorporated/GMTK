@@ -16,7 +16,7 @@ public class Explode : MonoBehaviour
             return;
         }
 
-        await WaitForSeconds(2);
+        await WaitForSeconds(1);
         ObjectToExplode.SetActive(true);
     }
 
