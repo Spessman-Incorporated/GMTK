@@ -5395,8 +5395,8 @@ MonoBehaviour:
   DicePrefab: {fileID: 1625854793851696128, guid: 53c1f89902369ba4a92285d8fb4d9b30,
     type: 3}
   DiceSpawn: {fileID: 87936821}
-  DiceDelay: 0
-  CanThrow: 0
+  DiceDelay: 0.5
+  CanThrow: 1
   CanMove: 1
   CanMoveForward: 0
   CanMoveBackward: 0
