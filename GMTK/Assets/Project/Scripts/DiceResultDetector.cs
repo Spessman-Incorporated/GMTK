@@ -6,7 +6,7 @@ using UnityEngine;
 public class DiceResultDetector : MonoBehaviour
 {
     public int Side;
-    public int Side2;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out DiceResultHelper diceResultHelper));
@@ -14,7 +14,8 @@ public class DiceResultDetector : MonoBehaviour
             if (diceResultHelper != null)
             {
                 Side = diceResultHelper.Side;
-                Side2 = Side;
+
+                DiceResultSystem.DiceResult = Side;
             }
         }
     }

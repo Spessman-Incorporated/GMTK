@@ -33,7 +33,7 @@ public class CharacterMovement : MonoBehaviour
         {
             Vector3 position = transform.position;
             position.y += 0.5f;
-
+ 
             if (Physics.Raycast(position, mesh.forward, out RaycastHit hit, .5f))
             {
                 Debug.Log(hit.transform.gameObject.name);
