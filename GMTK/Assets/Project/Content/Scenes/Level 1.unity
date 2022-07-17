@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1273174, g: 0.13414761, b: 0.12107885, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1275,7 +1275,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1882140155}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.8899999, y: 0, z: -0.72}
   m_LocalScale: {x: 500, y: 500, z: 500}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1396,7 +1396,7 @@ PrefabInstance:
     - target: {fileID: 774255240879413264, guid: 5596e9663ab81bf44a32f89b599d96bb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.8899999
       objectReference: {fileID: 0}
     - target: {fileID: 774255240879413264, guid: 5596e9663ab81bf44a32f89b599d96bb,
         type: 3}
@@ -1406,7 +1406,7 @@ PrefabInstance:
     - target: {fileID: 774255240879413264, guid: 5596e9663ab81bf44a32f89b599d96bb,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.72
       objectReference: {fileID: 0}
     - target: {fileID: 774255240879413264, guid: 5596e9663ab81bf44a32f89b599d96bb,
         type: 3}
@@ -1485,7 +1485,7 @@ PrefabInstance:
     - target: {fileID: 2599661576319019736, guid: 30465b7d5cd10d84694e73fec319488e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.5
+      value: -6.39
       objectReference: {fileID: 0}
     - target: {fileID: 2599661576319019736, guid: 30465b7d5cd10d84694e73fec319488e,
         type: 3}
@@ -1495,7 +1495,7 @@ PrefabInstance:
     - target: {fileID: 2599661576319019736, guid: 30465b7d5cd10d84694e73fec319488e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.5
+      value: -0.22
       objectReference: {fileID: 0}
     - target: {fileID: 2599661576319019736, guid: 30465b7d5cd10d84694e73fec319488e,
         type: 3}
