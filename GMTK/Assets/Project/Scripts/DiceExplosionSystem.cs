@@ -11,6 +11,10 @@ public class DiceExplosionSystem : MonoBehaviour
     public List<GameObject> LeftExplosions;
     public List<GameObject> RightExplosions;
 
+
+    public AudioSource diceAudioSource;
+    public AudioClip[] diceExplosionAudioClips;
+
     private void OnEnable()
     {
         PhysicalDice.OnDiceRollFinish += ExplodeTiles;
@@ -37,6 +41,10 @@ public class DiceExplosionSystem : MonoBehaviour
     public void ExplodeTiles()
     {
         int DiceResult = DiceResultSystem.DiceResult;
+
+        int selectedClip = UnityEngine.Random.Range(0, diceExplosionAudioClips.Length);
+        diceAudioSource.clip = diceExplosionAudioClips[selectedClip];
+        diceAudioSource.Play();
 
         for (int i = 0; i < DiceResult; i++)
         {

@@ -28,6 +28,8 @@ public class CharacterMovement : MonoBehaviour
     public AudioSource playerAudioSource;
     public AudioClip[] playerMovementAudioClips;
 
+    public AudioSource diceAudioSource;
+    public AudioClip[] diceSpawnAudioClips;
 
 
     private void Update()
@@ -81,6 +83,10 @@ public class CharacterMovement : MonoBehaviour
             }
 
             PhysicalDice instance = Instantiate(DicePrefab, DiceSpawn.position, Quaternion.Euler(-90, mesh.eulerAngles.y, 0));
+
+            int selectedClip = UnityEngine.Random.Range(0, diceSpawnAudioClips.Length);
+            diceAudioSource.clip = diceSpawnAudioClips[selectedClip];
+            diceAudioSource.Play();
 
             instance.MoveUntilHitWall(mesh.forward);
 
