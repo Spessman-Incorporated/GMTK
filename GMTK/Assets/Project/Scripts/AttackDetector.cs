@@ -20,7 +20,7 @@ public class AttackDetector : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            AttackParticles.Play();
+            //AttackParticles.Play();
         }
     }
 }
