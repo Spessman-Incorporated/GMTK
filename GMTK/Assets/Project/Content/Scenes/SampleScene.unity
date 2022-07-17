@@ -504,12 +504,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1275708497}
   m_CullTransparentMesh: 1
---- !u!82 &1313649044 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 6556486915113723372, guid: 30465b7d5cd10d84694e73fec319488e,
-    type: 3}
-  m_PrefabInstance: {fileID: 2565190397344822337}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1483421738
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1358,7 +1352,7 @@ PrefabInstance:
         type: 3}
       propertyPath: playerAudioSource
       value: 
-      objectReference: {fileID: 1313649044}
+      objectReference: {fileID: 2565190397344822338}
     - target: {fileID: 2565190397731491124, guid: 30465b7d5cd10d84694e73fec319488e,
         type: 3}
       propertyPath: CharacterMovementDelay
@@ -1426,6 +1420,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30465b7d5cd10d84694e73fec319488e, type: 3}
+--- !u!82 &2565190397344822338 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4606103910574275977, guid: 30465b7d5cd10d84694e73fec319488e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2565190397344822337}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7167496776758886082
 PrefabInstance:
   m_ObjectHideFlags: 0
