@@ -46,14 +46,6 @@ public class PhysicalDice : MonoBehaviour
         Debug.Log("dice collided");
     }
 
-    public void Update()
-    {
-        if (Application.isEditor && Input.GetKeyDown(KeyCode.Space))
-        {
-            ShakeDice(1f);
-        }
-    }
-
     [ContextMenu("Shake dice")]
     public void ShakeDice(float duration)
     {

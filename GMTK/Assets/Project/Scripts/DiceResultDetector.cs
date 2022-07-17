@@ -11,8 +11,11 @@ public class DiceResultDetector : MonoBehaviour
     {
         if (other.TryGetComponent(out DiceResultHelper diceResultHelper));
         {
-            Side = diceResultHelper.Side;
-            Side2 = Side;
+            if (diceResultHelper != null)
+            {
+                Side = diceResultHelper.Side;
+                Side2 = Side;
+            }
         }
     }
 }

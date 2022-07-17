@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &87936820
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 87936821}
+  m_Layer: 0
+  m_Name: Dice Slot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &87936821
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87936820}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.871, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4891862620093750210}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &184629472751983329
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,6 +210,7 @@ GameObject:
   - component: {fileID: 1828459591111064350}
   - component: {fileID: 7844161655751214875}
   - component: {fileID: 549425077}
+  - component: {fileID: 312364192613500691}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -211,7 +242,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.21
+  m_Radius: 0.83
   m_Height: 1.03
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
@@ -5080,6 +5111,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dice: {fileID: 0}
+  diceObject: {fileID: 0}
+--- !u!114 &312364192613500691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 569241055302225854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a532163e8676c144af68c60bf5de2ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dice: {fileID: 0}
+  diceObject: {fileID: 1625854793851696130, guid: 53c1f89902369ba4a92285d8fb4d9b30,
+    type: 3}
 --- !u!1 &2007613292423152560
 GameObject:
   m_ObjectHideFlags: 0
@@ -5345,7 +5392,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterMovementDelay: 0.2
   mesh: {fileID: 4891862620093750210}
+  DicePrefab: {fileID: 1625854793851696128, guid: 53c1f89902369ba4a92285d8fb4d9b30,
+    type: 3}
+  DiceSpawn: {fileID: 87936821}
+  DiceDelay: 0
+  CanThrow: 0
   CanMove: 1
+  CanMoveForward: 0
+  CanMoveBackward: 0
+  CanMoveLeft: 0
+  CanMoveRight: 0
 --- !u!1 &3841460810867677770
 GameObject:
   m_ObjectHideFlags: 0
@@ -5825,6 +5881,7 @@ Transform:
   - {fileID: 8941510523864867951}
   - {fileID: 4789405214260094872}
   - {fileID: 1688434946500745254}
+  - {fileID: 87936821}
   m_Father: {fileID: 2599661576319019736}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
