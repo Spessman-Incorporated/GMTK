@@ -15,7 +15,8 @@ public class CharacterMovement : MonoBehaviour
     public bool CanThrow;
 
     public bool CanMove;
-
+    private bool inputsAreFree;
+    private bool gameStarted = false;
     public bool CanMoveForward;
     public bool CanMoveBackward;
     public bool CanMoveLeft;
@@ -30,8 +31,12 @@ public class CharacterMovement : MonoBehaviour
 
     public AudioSource diceAudioSource;
     public AudioClip[] diceSpawnAudioClips;
+    public GameObject gameStartDirector;
 
-
+    private void Start()
+    {
+        FreeInputsCoroutine();
+    }
     private void Update()
     {
         ProcessPlayerInput();
@@ -39,8 +44,10 @@ public class CharacterMovement : MonoBehaviour
         ProcessPlayerDirection();
     }
 
-    private void ProcessPlayerDirection() {
-        switch (Mathf.Round(mesh.transform.localRotation.eulerAngles.y)) {
+    private void ProcessPlayerDirection()
+    {
+        switch (Mathf.Round(mesh.transform.localRotation.eulerAngles.y))
+        {
             case 180:
                 dir = 1;
                 break;
@@ -72,9 +79,13 @@ public class CharacterMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && CanMove && CanThrow)
         {
+            if (inputsAreFree && !gameStarted) {
+                gameStartDirector.SetActive(true);
+                gameStarted = true;
+            }
             Vector3 position = transform.position;
             position.y += 0.5f;
- 
+
             if (Physics.Raycast(position, mesh.forward, out RaycastHit hit, .5f))
             {
                 Debug.Log(hit.transform.gameObject.name);
@@ -114,6 +125,8 @@ public class CharacterMovement : MonoBehaviour
             return;
         }
 
+
+        
         Vector3 position = transform.position;
         position.y += 0.5f;
 
@@ -222,7 +235,17 @@ public class CharacterMovement : MonoBehaviour
 
         if (input.magnitude == 0 || movingOnBlocked)
         {
+
             return;
+        }
+        else
+        {
+            if (inputsAreFree && !gameStarted)
+            {
+                gameStartDirector.SetActive(true);
+                gameStarted = true;
+                CanMove = true;
+            }
         }
 
         InputDelayCoroutine();
@@ -251,7 +274,19 @@ public class CharacterMovement : MonoBehaviour
 
         TimeSpan duration = TimeSpan.FromSeconds(DiceDelay);
         await UniTask.Delay(duration);
-        
+
         CanThrow = true;
+    }
+    private async void FreeInputsCoroutine()
+    {
+        CanThrow = false;
+        CanMove = false;
+
+        TimeSpan duration = TimeSpan.FromSeconds(4f);
+        await UniTask.Delay(duration);
+
+        CanMove = true;
+        CanThrow = true;
+        inputsAreFree = true;
     }
 }
