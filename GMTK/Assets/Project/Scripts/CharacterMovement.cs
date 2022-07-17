@@ -25,6 +25,11 @@ public class CharacterMovement : MonoBehaviour
     public GameObject[] playerDirection;
     private int dir;
 
+    public AudioSource playerAudioSource;
+    public AudioClip[] playerMovementAudioClips;
+
+
+
     private void Update()
     {
         ProcessPlayerInput();
@@ -224,6 +229,9 @@ public class CharacterMovement : MonoBehaviour
     private async void InputDelayCoroutine()
     {
         CanMove = false;
+        int selectedClip = UnityEngine.Random.Range(0, playerMovementAudioClips.Length);
+        playerAudioSource.clip = playerMovementAudioClips[selectedClip];
+        playerAudioSource.Play();
 
         TimeSpan duration = TimeSpan.FromSeconds(CharacterMovementDelay);
         await UniTask.Delay(duration);
