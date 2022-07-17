@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: fcb0a0adf25674a4c849dbc38baf4cab
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Denton Test
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 66c31167770f5d34c8c3ee5aef2927a1, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
