@@ -35,7 +35,13 @@ public class PhysicalDice : MonoBehaviour
 
     private void HandleDiceTriggered(ref EventContext context, in DiceTriggeredEvent e)
     {
-        if (e.Hit.layer == LayerMask.NameToLayer("Walls"))
+        if (e.Hit.transform.root == transform)
+        {
+            return;
+
+        }
+
+        if (e.Hit.layer == LayerMask.NameToLayer("Walls") || e.Hit.layer == LayerMask.NameToLayer("Dice"))
         {
             HitSomething = true;
         }

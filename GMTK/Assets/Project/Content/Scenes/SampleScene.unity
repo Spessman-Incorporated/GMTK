@@ -1037,6 +1037,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2565190397731491124, guid: 30465b7d5cd10d84694e73fec319488e,
+        type: 3}
+      propertyPath: CanThrow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2565190397731491124, guid: 30465b7d5cd10d84694e73fec319488e,
+        type: 3}
+      propertyPath: DiceDelay
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2599661576319019736, guid: 30465b7d5cd10d84694e73fec319488e,
         type: 3}
       propertyPath: m_RootOrder

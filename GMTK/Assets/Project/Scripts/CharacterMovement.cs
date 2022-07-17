@@ -31,6 +31,16 @@ public class CharacterMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && CanMove && CanThrow)
         {
+            Vector3 position = transform.position;
+            position.y += 0.5f;
+
+            if (Physics.Raycast(position, mesh.forward, out RaycastHit hit, .5f))
+            {
+                Debug.Log(hit.transform.gameObject.name);
+
+                return;
+            }
+
             PhysicalDice instance = Instantiate(DicePrefab, DiceSpawn.position, Quaternion.Euler(-90, mesh.eulerAngles.y, 0));
 
             instance.MoveUntilHitWall(mesh.forward);
@@ -61,6 +71,7 @@ public class CharacterMovement : MonoBehaviour
 
         Vector3 position = transform.position;
         position.y += 0.5f;
+
 
         if (Physics.Raycast(position, transform.forward, out RaycastHit hit, .8f))
         {
