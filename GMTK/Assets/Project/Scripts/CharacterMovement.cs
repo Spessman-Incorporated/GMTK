@@ -21,10 +21,44 @@ public class CharacterMovement : MonoBehaviour
     public bool CanMoveLeft;
     public bool CanMoveRight;
 
+
+    public GameObject[] playerDirection;
+    private int dir;
+
     private void Update()
     {
         ProcessPlayerInput();
         ProcessPlayerAttack();
+        ProcessPlayerDirection();
+    }
+
+    private void ProcessPlayerDirection() {
+        switch (Mathf.Round(mesh.transform.localRotation.eulerAngles.y)) {
+            case 180:
+                dir = 1;
+                break;
+            case 270:
+                dir = 2;
+                break;
+            case 0:
+                dir = 0;
+                break;
+            case 90:
+                dir = 3;
+                break;
+        }
+        for (int i = 0; i < playerDirection.Length; i++)
+        {
+            if (i == dir)
+            {
+                playerDirection[i].gameObject.SetActive(true);
+            }
+            else
+            {
+                playerDirection[i].gameObject.SetActive(false);
+
+            }
+        }
     }
 
     private void ProcessPlayerAttack()
@@ -193,7 +227,7 @@ public class CharacterMovement : MonoBehaviour
 
         TimeSpan duration = TimeSpan.FromSeconds(CharacterMovementDelay);
         await UniTask.Delay(duration);
-        
+
         CanMove = true;
     }
 
