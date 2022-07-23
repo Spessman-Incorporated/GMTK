@@ -51,7 +51,6 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -341,16 +340,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      WeaponIcons_Handgun: 21300002
-      WeaponIcons_AssaultRifleAmmo: 21300004
-      WeaponIcons_AssaultRifle: 21300008
-      WeaponIcons_Shotgun: 21300000
-      WeaponIcons_ShotgunAmmo: 21300014
-      WeaponIcons_SniperRifleAmmo: 21300006
-      WeaponIcons_HandgunAmmo: 21300012
-      WeaponIcons_LoftSword: 21300016
-      WeaponIcons_SniperRifle: 21300010
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

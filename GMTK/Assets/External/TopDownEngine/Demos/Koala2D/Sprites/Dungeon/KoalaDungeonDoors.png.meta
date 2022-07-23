@@ -45,7 +45,6 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -293,14 +292,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      DungeonDoors_Closed2: 21300006
-      DungeonDoors_OpenBottom: 21300000
-      DungeonDoors_OpenTop: 21300002
-      DungeonDoors_GateTop: -6882960092962382143
-      DungeonDoors_GateBottom: 7280219535031015504
-      DungeonDoors_GateGround: -5596091024112990592
-      DungeonDoors_Closed1: 21300004
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

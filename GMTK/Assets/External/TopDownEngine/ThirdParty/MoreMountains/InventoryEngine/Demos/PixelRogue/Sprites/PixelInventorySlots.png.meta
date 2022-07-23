@@ -51,7 +51,6 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -305,16 +304,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      PixelInventorySlotsSelector3: 21300012
-      PixelInventorySlotsPressed: 21300014
-      PixelInventorySlotsSelector2: 21300010
-      PixelInventorySlotsHighlighted: 21300006
-      PixelInventorySlotsDisabled: 21300000
-      PixelInventorySlotsSelector1: 21300008
-      PixelInventorySlotsEmpty: 21300004
-      PixelInventorySlotsFilled: 21300002
-      PixelInventorySlotsMoving: 21300016
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

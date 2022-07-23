@@ -72,7 +72,6 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -509,23 +508,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      AchievementIcons_11: 21300022
-      AchievementIcons_Money: 21300004
-      AchievementIcons_15: 21300030
-      AchievementIcons_7: 21300014
-      AchievementIcons_9: 21300018
-      AchievementIcons_13: 21300026
-      AchievementIcons_10: 21300020
-      AchievementIcons_JumpAround: 21300002
-      AchievementIcons_Stimpack: 21300006
-      AchievementIcons_12: 21300024
-      AchievementIcons_Locked: 21300010
-      AchievementIcons_14: 21300028
-      AchievementIcons_ThisIsTheEnd: 21300000
-      AchievementIcons_Dead: 21300008
-      AchievementIcons_8: 21300016
-      AchievementIcons_6: 21300012
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

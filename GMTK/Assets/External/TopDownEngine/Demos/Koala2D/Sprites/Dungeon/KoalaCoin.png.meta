@@ -42,7 +42,6 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -269,13 +268,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Koala_Coin_4: 21300008
-      Koala_Coin_0: 21300000
-      Koala_Coin_2: 21300004
-      Koala_Coin_1: 21300002
-      Koala_Coin_3: 21300006
-      Koala_Coin_5: 21300010
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

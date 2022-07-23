@@ -48,7 +48,6 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -317,15 +316,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      NinjaSwordSlash_6: 21300012
-      NinjaSwordSlash_2: 21300004
-      NinjaSwordSlash_1: 21300002
-      NinjaSwordSlash_3: 21300006
-      NinjaSwordSlash_5: 21300010
-      NinjaSwordSlash_4: 21300008
-      NinjaSwordSlash_0: 21300000
-      NinjaSwordSlash_7: 21300014
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

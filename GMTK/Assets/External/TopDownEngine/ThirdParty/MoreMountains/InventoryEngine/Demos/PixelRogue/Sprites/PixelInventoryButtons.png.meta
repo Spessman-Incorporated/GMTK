@@ -42,7 +42,6 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -233,13 +232,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      PixelInventoryButtonGreyPressed: 21300010
-      PixelInventoryButtonGrey: 21300008
-      PixelInventoryButtonGreen: 21300000
-      PixelInventoryButtonRed: 21300004
-      PixelInventoryButtonGreenPressed: 21300002
-      PixelInventoryButtonRedPressed: 21300006
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

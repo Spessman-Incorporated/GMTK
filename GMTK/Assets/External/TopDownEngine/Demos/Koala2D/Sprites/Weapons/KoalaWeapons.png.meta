@@ -48,7 +48,6 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -317,15 +316,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Koala_Weapons_Plasma: 21300006
-      Koala_Weapons_RifleBullet: 21300008
-      Koala_Weapons_PlasmaBullet: 21300012
-      Koala_Weapons_GunBullet: 21300010
-      Koala_Weapons_Shotgun: 21300000
-      Koala_Weapons_ShotgunBullet: 21300014
-      Koala_Weapons_Gun: 21300004
-      Koala_Weapons_Rifle: 21300002
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
