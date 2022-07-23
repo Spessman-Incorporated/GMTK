@@ -132,7 +132,6 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -989,43 +988,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      GrassGround1_34: 21300068
-      GrassGround1_9: 21300018
-      GrassGround1_8: 21300016
-      GrassGround1_4: 21300008
-      GrassGround1_31: 21300062
-      GrassGround1_10: 21300020
-      GrassGround1_12: 21300024
-      GrassGround1_26: 21300052
-      GrassGround1_0: 21300000
-      GrassGround1_6: 21300012
-      GrassGround1_28: 21300056
-      GrassGround1_32: 21300064
-      GrassGround1_13: 21300026
-      GrassGround1_18: 21300036
-      GrassGround1_22: 21300044
-      GrassGround1_35: 21300070
-      GrassGround1_2: 21300004
-      GrassGround1_25: 21300050
-      GrassGround1_16: 21300032
-      GrassGround1_3: 21300006
-      GrassGround1_5: 21300010
-      GrassGround1_11: 21300022
-      GrassGround1_7: 21300014
-      GrassGround1_27: 21300054
-      GrassGround1_33: 21300066
-      GrassGround1_20: 21300040
-      GrassGround1_21: 21300042
-      GrassGround1_23: 21300046
-      GrassGround1_24: 21300048
-      GrassGround1_15: 21300030
-      GrassGround1_29: 21300058
-      GrassGround1_17: 21300034
-      GrassGround1_1: 21300002
-      GrassGround1_14: 21300028
-      GrassGround1_19: 21300038
-      GrassGround1_30: 21300060
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

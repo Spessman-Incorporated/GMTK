@@ -156,7 +156,6 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -1181,51 +1180,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      HornyBlue_25: 21300050
-      HornyBlue_36: 21300072
-      HornyBlue_35: 21300070
-      HornyBlue_27: 21300054
-      HornyBlue_21: 21300042
-      HornyBlue_3: 21300006
-      HornyBlue_2: 21300004
-      HornyBlue_30: 21300060
-      HornyBlue_13: 21300026
-      HornyBlue_29: 21300058
-      HornyBlue_37: 21300074
-      HornyBlue_28: 21300056
-      HornyBlue_0: 21300000
-      HornyBlue_14: 21300028
-      HornyBlue_19: 21300038
-      HornyBlue_24: 21300048
-      HornyBlue_39: 21300078
-      HornyBlue_34: 21300068
-      HornyBlue_26: 21300052
-      HornyBlue_7: 21300014
-      HornyBlue_43: 21300086
-      HornyBlue_18: 21300036
-      HornyBlue_15: 21300030
-      HornyBlue_38: 21300076
-      HornyBlue_20: 21300040
-      HornyBlue_6: 21300012
-      HornyBlue_23: 21300046
-      HornyBlue_17: 21300034
-      HornyBlue_5: 21300010
-      HornyBlue_32: 21300064
-      HornyBlue_42: 21300084
-      HornyBlue_33: 21300066
-      HornyBlue_11: 21300022
-      HornyBlue_8: 21300016
-      HornyBlue_10: 21300020
-      HornyBlue_40: 21300080
-      HornyBlue_4: 21300008
-      HornyBlue_22: 21300044
-      HornyBlue_12: 21300024
-      HornyBlue_1: 21300002
-      HornyBlue_31: 21300062
-      HornyBlue_9: 21300018
-      HornyBlue_16: 21300032
-      HornyBlue_41: 21300082
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

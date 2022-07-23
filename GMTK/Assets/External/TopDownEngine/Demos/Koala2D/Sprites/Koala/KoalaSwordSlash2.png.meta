@@ -45,7 +45,6 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -293,14 +292,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      KoalaSword_Slash2_6: 21300012
-      KoalaSword_Slash2_1: 21300002
-      KoalaSword_Slash2_2: 21300004
-      KoalaSword_Slash2_4: 21300008
-      KoalaSword_Slash2_0: 21300000
-      KoalaSword_Slash2_5: 21300010
-      KoalaSword_Slash2_3: 21300006
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

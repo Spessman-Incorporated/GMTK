@@ -42,7 +42,6 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -269,13 +268,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      KoalaGUI_Koala: 21300008
-      KoalaGUI_CircleBg: 21300000
-      KoalaGUI_DelayedBar: 21300010
-      KoalaGUI_BarBg: 21300004
-      KoalaGUI_CircleFront: 21300002
-      KoalaGUI_BarFront: 21300006
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

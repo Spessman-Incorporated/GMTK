@@ -54,7 +54,6 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -365,17 +364,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      GrassPaving_0: 21300000
-      GrassPaving_9: 21300018
-      GrassPaving_4: 21300008
-      GrassPaving_6: 21300012
-      GrassPaving_7: 21300014
-      GrassPaving_5: 21300010
-      GrassPaving_3: 21300006
-      GrassPaving_2: 21300004
-      GrassPaving_8: 21300016
-      GrassPaving_1: 21300002
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
