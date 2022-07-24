@@ -10,6 +10,7 @@ public class DiceController : MonoBehaviour
 {
     public SpriteRenderer DiceSprite;
     public List<Sprite> DiceNumbers =  new List<Sprite>();
+    public float ChangeSideTime;
     
     private void Awake()
     {
@@ -26,7 +27,7 @@ public class DiceController : MonoBehaviour
         foreach (Sprite sprite in spriteList)
         {
             DiceSprite.sprite = sprite;
-            await WaitForSeconds(0.5f);
+            await WaitForSeconds(ChangeSideTime);
         }
 
         PlayerController.CanPlaceDice = true;
