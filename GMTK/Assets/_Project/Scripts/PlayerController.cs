@@ -1,16 +1,20 @@
 using System;
+using FullscreenEditor;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class PlayerController : MonoBehaviour
 {
+    public static bool CanPlaceDice = true;
+
     public float MovementSpeed;
     public Transform MovementPoint;
     public LayerMask CollidersLayer;
     
     public GameObject DicePrefab;
 
-    public static bool CanPlaceDice = true;
-    public bool canPlaceDice;
+    public Tilemap GroundTileMap;
     
     private Transform PlayerTransform;
     private const float MovementTolerance = .05f;
@@ -24,8 +28,6 @@ public class PlayerController : MonoBehaviour
     
     private void Update()
     {
-        canPlaceDice = CanPlaceDice;
-
         if (Input.GetKeyDown(KeyCode.Space) && CanPlaceDice)
         {
             PlaceDice();
@@ -53,7 +55,6 @@ public class PlayerController : MonoBehaviour
             { 
                 MovementPoint.position += new Vector3(horizontalInput, 0f, 0f);
             }
-           
         }
         
         if (Math.Abs(Mathf.Abs(verticallInput) - 1f) < MovementTolerance)
@@ -67,6 +68,6 @@ public class PlayerController : MonoBehaviour
 
     private void PlaceDice()
     {
-        Instantiate(DicePrefab, PlayerTransform.position, Quaternion.identity);
+        Instantiate(DicePrefab, MovementPoint.position, Quaternion.identity);
     }
 }
