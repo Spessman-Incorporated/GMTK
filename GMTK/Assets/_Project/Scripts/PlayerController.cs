@@ -7,6 +7,11 @@ public class PlayerController : MonoBehaviour
     public Transform MovementPoint;
     public LayerMask CollidersLayer;
     
+    public GameObject DicePrefab;
+
+    public static bool CanPlaceDice = true;
+    public bool canPlaceDice;
+    
     private Transform PlayerTransform;
     private const float MovementTolerance = .05f;
 
@@ -14,10 +19,18 @@ public class PlayerController : MonoBehaviour
     {
         PlayerTransform = transform;
         MovementPoint.parent = null;
+        
     }
     
     private void Update()
     {
+        canPlaceDice = CanPlaceDice;
+
+        if (Input.GetKeyDown(KeyCode.Space) && CanPlaceDice)
+        {
+            PlaceDice();
+        }
+        
         Move();
     }
 
@@ -50,5 +63,10 @@ public class PlayerController : MonoBehaviour
                 MovementPoint.position += new Vector3(0f, verticallInput, 0f);
             }
         }
+    }
+
+    private void PlaceDice()
+    {
+        Instantiate(DicePrefab, PlayerTransform.position, Quaternion.identity);
     }
 }
