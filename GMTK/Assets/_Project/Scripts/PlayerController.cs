@@ -25,15 +25,18 @@ public class PlayerController : MonoBehaviour
         MovementPoint.parent = null;
         
     }
-    
+
+    private void FixedUpdate()
+    {
+        Move();
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && CanPlaceDice)
         {
             PlaceDice();
         }
-        
-        Move();
     }
 
     private void Move()
