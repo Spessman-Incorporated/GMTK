@@ -13,8 +13,6 @@ public class PlayerController : MonoBehaviour
     public LayerMask CollidersLayer;
     
     public GameObject DicePrefab;
-
-    public Tilemap GroundTileMap;
     
     private Transform PlayerTransform;
     private const float MovementTolerance = .05f;
@@ -23,7 +21,6 @@ public class PlayerController : MonoBehaviour
     {
         PlayerTransform = transform;
         MovementPoint.parent = null;
-        
     }
 
     private void FixedUpdate()
