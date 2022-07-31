@@ -4,18 +4,24 @@ using System.Linq;
 using Coimbra;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
-using Random = System.Random;
+using Random = UnityEngine.Random;
 
 public class DiceController : MonoBehaviour
 {
+    
     public SpriteRenderer DiceSprite;
     public List<Sprite> DiceNumbers =  new List<Sprite>();
     public float ChangeSideTime;
+
+    [Tooltip("How many times the die will change sides before exploding")] 
+    [SerializeField] private int _changeSideAmount;
 
     public List<GameObject> UpExplosions = new List<GameObject>();
     public List<GameObject> DownExplosions = new List<GameObject>();
     public List<GameObject> LeftExplosions = new List<GameObject>();
     public List<GameObject> RightExplosions = new List<GameObject>();
+
+    private int _dieSide;
     
     private void Awake()
     {
@@ -24,49 +30,66 @@ public class DiceController : MonoBehaviour
     
     private async void RollTheDice()
     {
-        PlayerController.CanPlaceDice = false;
+        int dieSpriteIndex = 0;
+        int lastSideUp = 0;
         
-        Random rng = new Random();
-        List<Sprite> spriteList = new List<Sprite>(DiceNumbers.OrderBy(item => rng.Next()));
+        PlayerController.CanPlaceDice = false;
 
-        foreach (Sprite sprite in spriteList)
+        for (int i = 0; i < _changeSideAmount; i++)
         {
-            DiceSprite.sprite = sprite;
+            while (dieSpriteIndex == lastSideUp)
+            {
+                dieSpriteIndex = Random.Range(0, DiceNumbers.Count);
+            }
+
+            lastSideUp = dieSpriteIndex;
+            _dieSide = dieSpriteIndex + 1;
+            DiceSprite.sprite = DiceNumbers[dieSpriteIndex];
+            
             await WaitForSeconds(ChangeSideTime);
         }
 
         PlayerController.CanPlaceDice = true;
 
-        ExplodeCells();
+        ExplodeCells(_dieSide);
     }
 
-    public async void ExplodeCells()
+    private async void ExplodeCells(int cellsToBeExploded)
     {
+        int cellsExploded = 0;
+        
         DiceSprite.gameObject.SetActive(false);
 
-        foreach (GameObject explostion in UpExplosions)
-        {
-            explostion.GetComponent<DiceExplosionController>().Explode();
-        }
-        
-        foreach (GameObject explostion in DownExplosions)
-        {
-            explostion.GetComponent<DiceExplosionController>().Explode();
-        }
-        
-        foreach (GameObject explostion in LeftExplosions)
-        {
-            explostion.GetComponent<DiceExplosionController>().Explode();
-        }
-        
-        foreach (GameObject explostion in RightExplosions)
-        {
-            explostion.GetComponent<DiceExplosionController>().Explode();
-        }
-        
+        ExplodeCellLine(UpExplosions);
+        ExplodeCellLine(DownExplosions);
+        ExplodeCellLine(LeftExplosions);
+        ExplodeCellLine(RightExplosions);
+
         await WaitForSeconds(0.5f);
 
         gameObject.Destroy();
+
+        void ExplodeCellLine(List<GameObject> cellLine)
+        {
+            foreach (GameObject explosion in cellLine)
+            {
+                DiceExplosionController diceExplosion = explosion.GetComponent<DiceExplosionController>();
+
+                if (diceExplosion.IsObstructed)
+                {
+                    return;
+                }
+                
+                diceExplosion.Explode();
+                cellsExploded++;
+
+                if (cellsExploded >= cellsToBeExploded)
+                {
+                    cellsExploded = 0;
+                    return;
+                }
+            }
+        }
     }
 
     private async UniTask WaitForSeconds(float seconds)

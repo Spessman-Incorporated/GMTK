@@ -57,7 +57,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.75, y: 0.75}
   m_EdgeRadius: 0
 --- !u!114 &956148915454571973
 MonoBehaviour:
@@ -71,6 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb25d5bd08ff03345ba8f6af6a0eafbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _explosionVfx: {fileID: 3690183541061324033}
 --- !u!1001 &3253726298440708907
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -78,6 +79,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7125514155828534419}
     m_Modifications:
+    - target: {fileID: 2166693994213654058, guid: e689359a3cbc38940820714636629b63,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2465228921311085857, guid: e689359a3cbc38940820714636629b63,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2755245751500699230, guid: e689359a3cbc38940820714636629b63,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -87,6 +98,11 @@ PrefabInstance:
         type: 3}
       propertyPath: lengthInSec
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102901036665062436, guid: e689359a3cbc38940820714636629b63,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4995130370649153815, guid: e689359a3cbc38940820714636629b63,
         type: 3}
@@ -173,11 +189,27 @@ PrefabInstance:
       propertyPath: looping
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7794464156858179576, guid: e689359a3cbc38940820714636629b63,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8126881407842373037, guid: e689359a3cbc38940820714636629b63,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e689359a3cbc38940820714636629b63, type: 3}
 --- !u!4 &5223929355460166000 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7302778963038302811, guid: e689359a3cbc38940820714636629b63,
+    type: 3}
+  m_PrefabInstance: {fileID: 3253726298440708907}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &3690183541061324033 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2166693994213654058, guid: e689359a3cbc38940820714636629b63,
     type: 3}
   m_PrefabInstance: {fileID: 3253726298440708907}
   m_PrefabAsset: {fileID: 0}
