@@ -59,8 +59,7 @@ public class PlayerController : MonoBehaviour
                 MovementPoint.position += new Vector3(horizontalInput, 0f, 0f);
             }
         }
-        
-        if (Math.Abs(Mathf.Abs(verticallInput) - 1f) < MovementTolerance)
+        else if (Math.Abs(Mathf.Abs(verticallInput) - 1f) < MovementTolerance)
         {
             if (!Physics2D.OverlapCircle(MovementPoint.position + new Vector3(0f, verticallInput, 0f), .2f, CollidersLayer))
             {
