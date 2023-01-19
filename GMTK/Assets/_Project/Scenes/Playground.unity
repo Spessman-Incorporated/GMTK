@@ -1592,6 +1592,7 @@ GameObject:
   m_Component:
   - component: {fileID: 36876193}
   - component: {fileID: 36876192}
+  - component: {fileID: 36876194}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1611,7 +1612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b738f7f265e4da4f8db63751ac2ca0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementSpeed: 5
+  _movementController: {fileID: 36876194}
   MovementPoint: {fileID: 449632178}
   CollidersLayer:
     serializedVersion: 2
@@ -1634,6 +1635,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &36876194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36876191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9711b8f0315f0247a4e2286f6757746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _movementRange: 1
+  _collisionLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  _walkableTilemap: {fileID: 492200671}
 --- !u!1 &131346512
 GameObject:
   m_ObjectHideFlags: 0
@@ -1818,6 +1836,7 @@ GameObject:
   m_Component:
   - component: {fileID: 340935577}
   - component: {fileID: 340935576}
+  - component: {fileID: 340935578}
   m_Layer: 0
   m_Name: Enemy_01 (3)
   m_TagString: Untagged
@@ -1837,7 +1856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd2550895afdbc24ca126cb267278874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NormalMovementSpeed: 3
+  _player: {fileID: 0}
   MovementPoint: {fileID: 1906964924}
   PlayerMovementPoint: {fileID: 449632178}
   CollidersLayer:
@@ -1864,6 +1883,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &340935578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340935575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9711b8f0315f0247a4e2286f6757746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _movementRange: 2
+  _collisionLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  _walkableTilemap: {fileID: 492200671}
 --- !u!1 &449632177
 GameObject:
   m_ObjectHideFlags: 0
@@ -3196,7 +3232,7 @@ Tilemap:
   - first: {x: 0, y: -1, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 0
+      m_TileIndex: 7
       m_TileSpriteIndex: 0
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
@@ -3206,7 +3242,7 @@ Tilemap:
   - first: {x: 1, y: -1, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 1
+      m_TileIndex: 6
       m_TileSpriteIndex: 1
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
@@ -3416,7 +3452,7 @@ Tilemap:
   - first: {x: 0, y: 0, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 2
+      m_TileIndex: 4
       m_TileSpriteIndex: 2
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
@@ -3426,7 +3462,7 @@ Tilemap:
   - first: {x: 1, y: 0, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 3
+      m_TileIndex: 5
       m_TileSpriteIndex: 3
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
@@ -4635,14 +4671,22 @@ Tilemap:
       m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 66
+  - m_RefCount: 65
     m_Data: {fileID: 11400000, guid: 4570265949e42d64a93bd83e71f0b3dc, type: 2}
-  - m_RefCount: 66
+  - m_RefCount: 65
     m_Data: {fileID: 11400000, guid: 902c12ad65c16c649bafb1fe74c781e2, type: 2}
-  - m_RefCount: 66
+  - m_RefCount: 65
     m_Data: {fileID: 11400000, guid: a3150a2c3d452cd49a5caaa5f587083b, type: 2}
-  - m_RefCount: 67
+  - m_RefCount: 66
     m_Data: {fileID: 11400000, guid: d87369776fdb3a34dbf41a1735cadda1, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 62be89c7603251e4ab32534ab1b18caf, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 386341f383140f54392f3d6d326dafb8, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 302af6d72d92a3e468dc1f8a43628dd2, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 1de0b407566a2414d9b007842063e281, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 66
     m_Data: {fileID: 7290454720634826377, guid: 4c3b8babaa2a66149ade77bac1ec298b,
@@ -5004,6 +5048,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1026638586}
   - component: {fileID: 1026638585}
+  - component: {fileID: 1026638587}
   m_Layer: 0
   m_Name: Enemy_01 (2)
   m_TagString: Untagged
@@ -5023,7 +5068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd2550895afdbc24ca126cb267278874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NormalMovementSpeed: 3
+  _player: {fileID: 0}
   MovementPoint: {fileID: 323871633}
   PlayerMovementPoint: {fileID: 449632178}
   CollidersLayer:
@@ -5050,6 +5095,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1026638587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026638584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9711b8f0315f0247a4e2286f6757746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _movementRange: 2
+  _collisionLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  _walkableTilemap: {fileID: 492200671}
 --- !u!1 &1113965847
 GameObject:
   m_ObjectHideFlags: 0
@@ -5060,6 +5122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1113965849}
   - component: {fileID: 1113965848}
+  - component: {fileID: 1113965850}
   m_Layer: 0
   m_Name: Enemy_01 (4)
   m_TagString: Untagged
@@ -5079,7 +5142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd2550895afdbc24ca126cb267278874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NormalMovementSpeed: 3
+  _player: {fileID: 0}
   MovementPoint: {fileID: 1987571265}
   PlayerMovementPoint: {fileID: 449632178}
   CollidersLayer:
@@ -5106,6 +5169,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1113965850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113965847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9711b8f0315f0247a4e2286f6757746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _movementRange: 2
+  _collisionLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  _walkableTilemap: {fileID: 492200671}
 --- !u!1 &1188705407
 GameObject:
   m_ObjectHideFlags: 0
@@ -5146,6 +5226,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1266167308}
   - component: {fileID: 1266167307}
+  - component: {fileID: 1266167309}
   m_Layer: 0
   m_Name: Enemy_01 (1)
   m_TagString: Untagged
@@ -5165,7 +5246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd2550895afdbc24ca126cb267278874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NormalMovementSpeed: 3
+  _player: {fileID: 0}
   MovementPoint: {fileID: 1911345547}
   PlayerMovementPoint: {fileID: 449632178}
   CollidersLayer:
@@ -5192,6 +5273,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1266167309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1266167306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9711b8f0315f0247a4e2286f6757746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _movementRange: 2
+  _collisionLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  _walkableTilemap: {fileID: 492200671}
 --- !u!1 &1349342712
 GameObject:
   m_ObjectHideFlags: 0
@@ -5759,6 +5857,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1726688167}
   - component: {fileID: 1726688166}
+  - component: {fileID: 1726688168}
   m_Layer: 0
   m_Name: Enemy_01
   m_TagString: Untagged
@@ -5778,7 +5877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd2550895afdbc24ca126cb267278874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NormalMovementSpeed: 3
+  _player: {fileID: 0}
   MovementPoint: {fileID: 1188705408}
   PlayerMovementPoint: {fileID: 449632178}
   CollidersLayer:
@@ -5805,6 +5904,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1726688168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726688165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9711b8f0315f0247a4e2286f6757746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _movementRange: 2
+  _collisionLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  _walkableTilemap: {fileID: 492200671}
 --- !u!1 &1906964923
 GameObject:
   m_ObjectHideFlags: 0

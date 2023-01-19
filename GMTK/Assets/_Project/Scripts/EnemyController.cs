@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    [SerializeField] private PlayerController _player;
+    
     [Header("Movement")]
-    public float NormalMovementSpeed = 3f;
     public Transform MovementPoint;
     public Transform PlayerMovementPoint;
     public LayerMask CollidersLayer;
@@ -18,26 +19,17 @@ public class EnemyController : MonoBehaviour
     public float TilesPerCharge = 3f;
 
     private float MovementSpeed;
-    private Transform _enemyTransform;
     private bool _isAttacking;
     private float HorizontalInput;
     private float VerticalInput;
     private const float MovementTolerance = .05f;
 
-    private void Awake()
+    private void Start()
     {
-        _enemyTransform = transform;
-        MovementSpeed = NormalMovementSpeed;
-        MovementPoint.parent = null;
+        InvokeRepeating(nameof(SetMovementDirection), 0.5f, 0.5f);
     }
 
-    private void FixedUpdate()
-    {
-        DefineMovementDirection();
-        Move();
-    }
-    
-    private void DefineMovementDirection()
+    private void SetMovementDirection()
     {
         if (_isAttacking)
         {
@@ -93,32 +85,6 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    private void Move()
-    {
-        _enemyTransform.position = Vector3.MoveTowards(_enemyTransform.position, MovementPoint.position,
-            MovementSpeed * Time.deltaTime);
-
-        if (Vector3.Distance(_enemyTransform.position, MovementPoint.position) >= MovementTolerance)
-        {
-            return;
-        }
-
-        if (Math.Abs(Mathf.Abs(HorizontalInput) - 1f) < MovementTolerance)
-        {
-            if (!Physics2D.OverlapCircle(MovementPoint.position + new Vector3(HorizontalInput, 0f, 0f), .2f, CollidersLayer))
-            { 
-                MovementPoint.position += new Vector3(HorizontalInput, 0f, 0f);
-            }
-        }
-        else if (Math.Abs(Mathf.Abs(VerticalInput) - 1f) < MovementTolerance)
-        {
-            if (!Physics2D.OverlapCircle(MovementPoint.position + new Vector3(0f, VerticalInput, 0f), .2f, CollidersLayer))
-            {
-                MovementPoint.position += new Vector3(0f, VerticalInput, 0f);
-            }
-        }
-    }
-
     private async UniTask Attack(float side)
     {
         _isAttacking = true;
@@ -130,7 +96,7 @@ public class EnemyController : MonoBehaviour
         
         await UniTask.Delay(TimeSpan.FromSeconds(TimeToChaseAgaing));
         
-        MovementSpeed = NormalMovementSpeed;
+        //MovementSpeed = NormalMovementSpeed;
         _isAttacking = false;
     }
 }
